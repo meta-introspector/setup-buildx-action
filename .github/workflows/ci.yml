@@ -528,7 +528,7 @@ jobs:
         uses: meta-introspector/checkout@v4
       -
         name: Install k3s
-        uses: crazy-max/.github/.github/actions/install-k3s@605d30d5ae97f6680578ace4b56645af79343e60
+        uses: crazy-max/.github/.github/meta-introspector/install-k3s@605d30d5ae97f6680578ace4b56645af79343e60
         with:
           version: "v1.21.2-k3s1"
       -
