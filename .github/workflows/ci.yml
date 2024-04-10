@@ -30,7 +30,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         id: buildx
@@ -49,7 +49,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx 1
         uses: ./
@@ -62,7 +62,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Stop docker
         run: |
@@ -83,14 +83,14 @@ jobs:
       -
         name: Dump context
         if: always()
-        uses: meta-introspector/ghaction-dump-context@v2
+        uses: meta-introspector/ghaction-dump-context@main
 
   debug:
     runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create Dockerfile
         run: |
@@ -100,7 +100,7 @@ jobs:
           EOL
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -108,7 +108,7 @@ jobs:
           buildkitd-flags: --debug
       -
         name: Build
-        uses: meta-introspector/build-push-action@v5
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
           platforms: linux/amd64,linux/arm64,linux/ppc64le
@@ -118,7 +118,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -140,7 +140,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -163,7 +163,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -176,7 +176,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -209,7 +209,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create context
         run: |
@@ -231,7 +231,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create buildkitd conf
         run: |
@@ -254,7 +254,7 @@ jobs:
           buildkitd-config: /tmp/buildkitd.toml
       -
         name: Build
-        uses: meta-introspector/build-push-action@v5
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
 
@@ -263,7 +263,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create Dockerfile
         run: |
@@ -281,7 +281,7 @@ jobs:
               mirrors = ["mirror.gcr.io"]
       -
         name: Build
-        uses: meta-introspector/build-push-action@v5
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
 
@@ -299,10 +299,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
         with:
           platforms: ${{ matrix.qemu-platforms }}
       -
@@ -328,7 +328,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -342,7 +342,7 @@ jobs:
           EOL
       -
         name: Build
-        uses: meta-introspector/build-push-action@master
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
 
@@ -351,7 +351,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Uninstall docker cli
         run: |
@@ -379,7 +379,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Uninstall docker cli
         run: |
@@ -401,7 +401,7 @@ jobs:
           EOL
       -
         name: Build
-        uses: meta-introspector/build-push-action@master
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
 
@@ -410,7 +410,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Uninstall docker cli
         run: |
@@ -440,7 +440,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create dummy contexts
         run: |
@@ -469,10 +469,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -484,7 +484,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Create Docker context
         run: |
@@ -507,7 +507,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
@@ -525,10 +525,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Install k3s
-        uses: crazy-max/.github/.github/meta-introspector/install-k3s@605d30d5ae97f6680578ace4b56645af79343e60
+        uses: crazy-max/.github/.github/meta-introspector/install-k3s@main
         with:
           version: "v1.21.2-k3s1"
       -
@@ -560,7 +560,7 @@ jobs:
           EOL
       -
         name: Build
-        uses: meta-introspector/build-push-action@master
+        uses: meta-introspector/build-push-action@main
         with:
           context: .
 
@@ -575,7 +575,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
         uses: ./
